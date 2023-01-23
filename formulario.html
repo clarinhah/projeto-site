@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulário Mais Saúde</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(90deg, #A1C298, #C6EBC5, #FBF2CF, #FA7070);
+
+
+        }
+
+
+
+
+
+        .box {
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 15px;
+            width: 20%;
+            min-width: 320px;
+            max-width: 800px;
+
+        }
+
+
+
+        fieldset {
+            border: 3px solid rgb(42, 210, 9);
+        }
+
+        legend {
+            border: 1px solid rgb(42, 210, 9);
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(42, 210, 9);
+            border-radius: 8px;
+
+        }
+
+        .inputBox {
+            position: relative;
+
+        }
+
+        .inputUser {
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            letter-spacing: 2px;
+
+
+        }
+
+
+        .labelInput {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+
+        }
+
+        .inputUser:focus~.labelInput,
+        .inputUser:valid~.labelInput {
+            top: -20px;
+            font-size: 12px;
+            color: rgb(42, 210, 9);
+        }
+
+        #data_nascimento {
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+
+        }
+
+        #submit {
+            background-image: linear-gradient(to right, rgb(90, 214, 107), rgb(17, 54, 71));
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+
+
+        }
+
+        #submit:hover {
+            background-image: linear-gradient(to right, rgb(90, 202, 82), rgb(7, 53, 66));
+        }
+
+        .titulosite {
+            height: 100%;
+            margin-top: 10px;
+            font-size: 300%;
+            color: white;
+        }
+
+        .titulosite::after {
+            content: '';
+            display: block;
+            width: 20rem;
+            height: 0.3rem;
+            background-color: red;
+            margin: 0 auto;
+            position: absolute;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="titulosite">
+        <font color="red">+</font>Mais <font color="red">Saúde</font>
+    </h1>
+
+    <div class="box">
+        <form method="POST">
+            <fieldset>
+                <legend><b>Cadastro de Pacientes</b></legend><br>
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome Completo</label>
+
+
+                </div><br><br>
+
+
+
+                <div class="inputBox">
+                    <input type="text" name="cpf" id="cpf" class="inputUser" required>
+                    <label for="cpf" class="labelInput">Digite o seu CPF</label>
+                </div><br><br>
+
+                <div class="inputBox">
+                    <input type="email" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div><br><br>
+
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone" class="labelInput">Telefone</label>
+                </div><br><br>
+                <label for="priority">Sexo</label>
+                <select id="priority" onchange="atualizouAgenda()">
+
+                    <option value="1" name="feminino">Feminino</option>
+                    <option value="2" name="masculino">Masculino</option>
+                    <option value="3" name="outro">Outro</option>
+                </select>
+                <br><br><br>
+
+
+
+
+                <label for="data_nascimento"><b>Data de Nascimento</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+                <br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade" class="labelInput">Cidade</label>
+                </div><br><br>
+
+
+                <div class="inputBox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado" class="labelInput">Estado</label>
+                </div><br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="endereco" class="labelInput">Endereço</label>
+                </div><br><br>
+
+                <input type="button" name="submit" id="submit" value="Enviar" onclick="redirect()">
+    </div>
+    </fieldset>
+    </form>
+
+    </div>
+    <script>
+
+        function redirect() {
+            window.alert("Cadastro efetuado com sucesso!")
+            location.href = "site.html"
+        }
+
+
+
+    </script>
+</body>
+
+</html>
